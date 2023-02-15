@@ -3,14 +3,8 @@ import io
 
 
 def generate_qr_code(url_link: str):
-
-    url = pyqrcode.create(url_link)
+    qr_code = pyqrcode.create(url_link)
     buffer = io.BytesIO()
-    url.png(buffer)
+    qr_code.png(buffer, scale=6)
     photo = buffer.getvalue()
     return photo
-
-
-
-
-

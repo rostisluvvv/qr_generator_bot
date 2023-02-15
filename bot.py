@@ -38,3 +38,4 @@ if __name__ == '__main__':
         asyncio.run(main())
     except(SystemExit):
         logger.error("Bot stopped!")
+        
