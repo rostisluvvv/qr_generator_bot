@@ -16,7 +16,10 @@ async def process_help_command(message: Message):
 
 
 async def process_url_command(message: Message):
-    await message.answer_photo(generate_qr_code(message.text))
+    if 'http://' in message.text or 'https://' in message.text :
+        await message.answer_photo(generate_qr_code(message.text))
+    else:
+        await message.answer(text=LEXICON['not_url'])
 
 
 def register_user_handlers(dp: Dispatcher):
